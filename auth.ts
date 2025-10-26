@@ -6,14 +6,15 @@ import { compare } from "bcrypt";
 
 export const { handlers } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  session: { strategy: "database" },
+  session: { strategy: "jwt" },
+  secret: process.env.AUTH_SECRET,
   providers: [
     Credentials({
       name: "Email & Password",
       credentials: { email: { label: "Email" }, password: { label: "Password", type: "password" } },
       async authorize(creds) {
         if (!creds?.email || !creds.password) return null;
-        const user = await prisma.user.findUnique({ where: { email: creds.email } });
+        const user = await prisma.user.findUnique({ where: { email: String(creds.email) } });
         if (!user?.password) return null;
         const ok = await compare(creds.password as string, user.password);
         return ok ? user : null;
