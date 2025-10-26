@@ -1,30 +1,36 @@
 
 
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 export default function SignInPage() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
+	const searchParams = useSearchParams();
 	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		setLoading(true);
 		setError("");
-		const res = await signIn("credentials", {
+		await signIn("credentials", {
 			email,
 			password,
 			redirect: true,
 			callbackUrl: "/admin"
 		});
-		// If using redirect: true, NextAuth will handle navigation
-		// If using redirect: false, you can check res?.error and set error state
 		setLoading(false);
-		if (res?.error) setError("Invalid email or password");
 	};
+
+	useEffect(() => {
+		const errorParam = searchParams.get("error");
+		if (errorParam === "CredentialsSignin") {
+			setError("Invalid email or password");
+		}
+	}, [searchParams]);
 
 	return (
 		<main className="min-h-screen py-20 flex flex-col items-center bg-[var(--brand-bg)]">
