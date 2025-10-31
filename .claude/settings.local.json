@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(if exist .env move .env .env.backup)",
+      "Bash(if [ -f .env ])",
+      "Bash(then mv .env .env.backup)",
+      "Bash(fi)",
+      "Bash(npm run dev:*)",
+      "Bash(openssl rand:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(dir:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm audit:*)",
+      "Bash(npx prisma generate:*)",
+      "Bash(npm test:*)",
+      "Bash(cat:*)",
+      "Bash(npx next-auth:*)",
+      "Bash(Select-Object -Last 5)",
+      "Bash(npm install:*)",
+      "Bash(npm run lint)",
+      "Bash(npx prisma:*)",
+      "Bash(pkill:*)",
+      "Bash(node prisma/seed-admin-user.ts:*)",
+      "Bash(tasklist:*)",
+      "Bash(if exist babel.config.js move babel.config.js babel.config.js.backup)",
+      "Bash(del:*)",
+      "Bash(curl:*)",
+      "Bash(timeout 5 curl:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
