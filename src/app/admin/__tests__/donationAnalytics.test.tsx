@@ -1,16 +1,16 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import DonationAnalytics from '../page';
+import AdminDashboard from '../page';
 
-describe('DonationAnalytics', () => {
-  it('renders total donations from API', async () => {
+describe('AdminDashboard', () => {
+  it('renders admin dashboard', async () => {
     // Mock fetch
     global.fetch = jest.fn(() => Promise.resolve({
-      json: () => Promise.resolve({ total: 12345 })
+      json: () => Promise.resolve({ users: [], donations: [], logs: [] })
     })) as any;
 
-    render(<DonationAnalytics />);
+    render(<AdminDashboard />);
     await waitFor(() => {
-      expect(screen.getByText(/12,345/)).toBeInTheDocument();
+      expect(screen.getByText(/Users/)).toBeInTheDocument();
     });
   });
 });

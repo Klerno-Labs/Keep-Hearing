@@ -17,7 +17,10 @@ export type CausePromoProps = {
 export function CausePromo(p: CausePromoProps) {
   if (!p.enabled) return null;
   return (
-    <aside className="rounded-2xl border p-5 md:p-6 bg-card">
+    <aside
+      className="rounded-2xl border p-5 md:p-6 bg-card"
+  style={{ backgroundImage: "url('/images/lab-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}
+    >
       <div className="text-xs uppercase tracking-wide opacity-70 mb-2">
         {p.label ?? "Promo / Partner Offer"}
       </div>
