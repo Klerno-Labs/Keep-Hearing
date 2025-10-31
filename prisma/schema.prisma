@@ -27,11 +27,13 @@ model User {
   accounts  Account[]
   donations Donation[]
   auditLogs AuditLog[]
+  deletedAt DateTime?  // Soft delete timestamp
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([email])
+  @@index([deletedAt])
 }
 
 model Donation {
@@ -110,4 +112,18 @@ model VerificationToken {
 
   // Primary key as a composite:
   @@id([identifier, token])
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String
+  status    String   @default("new") // new, read, archived
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
 }

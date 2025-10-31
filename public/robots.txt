@@ -1,0 +1,14 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin pages from search results
+Disallow: /admin
+Disallow: /signin
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://keephearing.org/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
