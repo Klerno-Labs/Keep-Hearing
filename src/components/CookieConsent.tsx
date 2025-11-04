@@ -124,7 +124,7 @@ export function CookieConsent() {
                 </Button>
                 <Button
                   onClick={acceptNecessary}
-                  variant="outline"
+                  variant="secondary"
                   className="flex-1 border-2 border-[#1e3a8a] text-[#1e3a8a] hover:bg-gray-50 px-6 py-3 rounded-lg font-semibold"
                 >
                   Necessary Only
@@ -224,7 +224,7 @@ export function CookieConsent() {
                 </Button>
                 <Button
                   onClick={() => setShowPreferences(false)}
-                  variant="outline"
+                  variant="secondary"
                   className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-lg"
                 >
                   Back

@@ -1,30 +1,24 @@
 import { NextResponse } from "next/server";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { prisma } from "@/lib/prisma";
 import {
   contactFormAdminNotification,
   contactFormAutoReply,
 } from "@/lib/email-templates";
 
-// Rate limiter: 3 submissions per 15 minutes per IP
-const limiter = rateLimit({
-  interval: 15 * 60 * 1000, // 15 minutes
-  uniqueTokenPerInterval: 500,
-});
-
 export async function POST(request: Request) {
   try {
     // Get IP for rate limiting
-    const ip = request.headers.get("x-forwarded-for") || "anonymous";
+    const ip = getClientIp(request);
 
-    // Rate limiting check
-    try {
-      await limiter.check(ip, 3); // 3 requests per 15 min
-    } catch {
-      return NextResponse.json(
-        { error: "Too many requests. Please try again later." },
-        { status: 429 }
-      );
+    // Rate limiting check - 3 submissions per 15 minutes
+    const rateLimitResponse = rateLimit(ip, {
+      limit: 3,
+      window: 15 * 60 * 1000, // 15 minutes
+    });
+
+    if (rateLimitResponse) {
+      return rateLimitResponse;
     }
 
     // Parse request body
@@ -81,7 +75,7 @@ export async function POST(request: Request) {
         const adminEmailPromise = resend.emails.send({
           from: "Keep Hearing Contact Form <noreply@keephearing.org>",
           to: ["info@keephearing.org"], // Replace with your actual admin email
-          replyTo: sanitizedEmail,
+          reply_to: sanitizedEmail,
           subject: `New Contact: ${sanitizedSubject}`,
           html: contactFormAdminNotification({
             name: sanitizedName,

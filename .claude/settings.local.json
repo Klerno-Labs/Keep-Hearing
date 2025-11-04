@@ -32,7 +32,11 @@
       "Bash(timeout 5 curl:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(mkdir:*)",
+      "Bash(move:*)",
+      "Bash(mv:*)",
+      "Bash(PORT=6001 npm run dev:*)"
     ],
     "deny": [],
     "ask": []

@@ -78,10 +78,11 @@ export async function PATCH(request: NextRequest) {
       data: { status },
     });
 
-    await logAudit(
-      session.user.id,
-      `Updated contact submission ${id} status to ${status}`
-    );
+    await logAudit({
+      action: `CONTACT_SUBMISSION_UPDATED`,
+      userId: session.user.id,
+      details: { submissionId: id, status }
+    });
 
     return NextResponse.json({ success: true, submission });
   } catch (error) {
@@ -126,7 +127,11 @@ export async function DELETE(request: NextRequest) {
       where: { id },
     });
 
-    await logAudit(session.user.id, `Deleted contact submission ${id}`);
+    await logAudit({
+      action: `CONTACT_SUBMISSION_DELETED`,
+      userId: session.user.id,
+      details: { submissionId: id }
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
