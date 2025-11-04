@@ -9,9 +9,9 @@ async function createAdmin() {
   try {
     // Change these values as needed
     const adminData = {
-      email: 'admin@keephearing.org',
-      name: 'Admin User',
-      password: 'ChangeThisPassword2024', // Change this to your desired password
+      email: 'chatfield@keephearing.org',
+      name: 'Chatfield Admin',
+      password: 'Hearing2025', // Change this to your desired password
       role: 'SUPERADMIN'
     };
 
