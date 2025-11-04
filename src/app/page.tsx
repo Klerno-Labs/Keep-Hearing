@@ -302,7 +302,8 @@ export default function Home() {
         </Card>
       </section>
 
-      {/* Donation Section - Solid Color */}
+      {/* Donation Section - Hidden until ready for launch */}
+      {/*
       <section className="animate-slide-up">
         <Card className="p-4 md:p-8 lg:p-10 text-center space-y-4 md:space-y-6 bg-purple-50 border-2 border-[var(--brand-primary)]/10 shadow-2xl">
           <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-[var(--brand-primary)]">
@@ -312,7 +313,6 @@ export default function Home() {
             Your donation helps us expand hearing preventive care and education worldwide. 100% of donations go to nonprofit programs.
           </p>
 
-          {/* Trust Badges */}
           <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-3 md:gap-4 py-3 md:py-4">
             <div className="flex items-center gap-2 px-3 md:px-4 py-2 bg-white rounded-lg shadow-md w-full max-w-xs md:w-auto">
               <span className="text-lg md:text-xl">✓</span>
@@ -337,13 +337,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Donation button temporarily removed - will be added in future phase */}
-
           <p className="text-xs text-gray-600 max-w-xl mx-auto px-3">
             Keep Hearing Initiative is a registered 501(c)(3) tax-exempt organization. Your donation is tax-deductible to the extent permitted by law.
           </p>
         </Card>
       </section>
+      */}
 
       {/* Newsletter Section - Substack Embed */}
       <section className="max-w-3xl mx-auto">
