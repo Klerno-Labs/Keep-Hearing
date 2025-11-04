@@ -8,7 +8,7 @@ databases:
 services:
   # Web Service - Next.js Application
   - type: web
-    name: keephearing-web
+    name: keep-hearing
     env: node
     region: oregon
     plan: free
