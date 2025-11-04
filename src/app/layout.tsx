@@ -7,6 +7,7 @@ import { Navigation } from "@/components/Navigation";
 import SessionProvider from "@/components/SessionProvider";
 import { CookieConsent } from "@/components/CookieConsent";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "KeepHearing.org",
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </footer>
+        <ScrollToTop />
         <CookieConsent />
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
