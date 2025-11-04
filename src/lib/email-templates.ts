@@ -238,16 +238,7 @@ export function contactFormAutoReply(data: {
           </a>
         </td>
       </tr>
-      <tr>
-        <td style="padding: 15px; background-color: #FEF3C7; border-radius: 6px; margin-top: 10px;">
-          <strong style="color: ${brandColors.primary}; font-size: 14px; display: block; margin-bottom: 5px;">
-            💙 Support Our Work
-          </strong>
-          <a href="http://localhost:3000/donate" style="color: ${brandColors.secondary}; text-decoration: none; font-size: 14px;">
-            Make a donation to help those with hearing loss
-          </a>
-        </td>
-      </tr>
+      <!-- Donation section temporarily removed - will be added in future phase -->
     </table>
 
     <p style="margin: 30px 0 0 0; color: ${brandColors.text}; font-size: 16px; line-height: 1.6;">

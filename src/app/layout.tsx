@@ -44,7 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
               <p className="text-xs md:text-sm text-gray-600 max-w-2xl mx-auto">
                 Keep Hearing Initiative is a registered nonprofit organization.
-                {" "}<a href="/transparency" className="text-[#2196d4] hover:underline">View Financial Reports & Transparency</a>
               </p>
             </div>
 

@@ -37,13 +37,8 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Donate Page -->
-  <url>
-    <loc>https://keephearing.org/donate</loc>
-    <lastmod>2025-01-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Donate Page - Temporarily removed -->
+  <!-- Will be re-added when donation functionality is launched -->
 
   <!-- Contact Page -->
   <url>

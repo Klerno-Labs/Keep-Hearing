@@ -140,7 +140,7 @@ export default function Home() {
               Bringing hearing preventive care to the world.
             </h1>
             <p className="text-sm md:text-lg lg:text-xl text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
-              There are no drugs that prevent hearing loss. ACEMg (Soundbites) is clinically proven to preserve or improve hearing in a 2 year real-world evidence/real-world data (RWE/RWD) study.
+              Supporting research and education for hearing health through innovative solutions and community engagement.
             </p>
             <div className="pt-1 md:pt-3">
               <a href="/participate">
@@ -337,13 +337,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-center pt-1 md:pt-2">
-            <a href="/donate" className="w-full md:w-auto max-w-xs">
-              <Button size="lg" className="w-full text-sm md:text-base px-6 md:px-8 py-3 md:py-4 shadow-lg hover:shadow-2xl transition-all">
-                Make a Donation →
-              </Button>
-            </a>
-          </div>
+          {/* Donation button temporarily removed - will be added in future phase */}
 
           <p className="text-xs text-gray-600 max-w-xl mx-auto px-3">
             Keep Hearing Initiative is a registered 501(c)(3) tax-exempt organization. Your donation is tax-deductible to the extent permitted by law.
